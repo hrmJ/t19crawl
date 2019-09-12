@@ -52,4 +52,8 @@ ENV LC_ALL en_US.UTF-8
 RUN pip3 install ipdb
 
 
-RUN pip3 install git+https://github.com/tunicorpora/webcorpcrawler && echo "updateds."
+RUN sudo apt update && \
+    sudo apt install -y curl && \
+    sudo rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install git+https://github.com/tunicorpora/webcorpcrawler && echo "updated"
